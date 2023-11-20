@@ -21,6 +21,39 @@ namespace Articoli
             Riciclabile = ric;
         }
 
+        new public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
+
+        //metodi equals e cmp
+        public bool Equals(ArtNonAlimentare cmp)
+        {
+            if (Codice == cmp.Codice && Descrizione == cmp.Descrizione && Prezzo == cmp.Prezzo && Riciclabile == cmp.Riciclabile)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // Overriding the Equals(Object) method from the Object class
+        public override bool Equals(object obj)
+        {
+            // Comparison of current data with the obj
+            if (obj is ArtNonAlimentare)
+                return Equals((ArtNonAlimentare)obj);
+            return false;
+        }
+
+        // Overriding the GetHashCode() method from the Object class
+        public override int GetHashCode()
+        {
+            return Prezzo.GetHashCode() + Descrizione.GetHashCode() + Codice.GetHashCode() + Riciclabile.GetHashCode();
+        }
+
+
+
         public override void sconto(bool fedelty)
         {
             base.sconto(fedelty);

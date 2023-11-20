@@ -22,6 +22,41 @@ namespace Articoli
             Scadenza = new DateTime(day, month, year);
         }
 
+
+        
+        new public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
+
+        //metodi equals e cmp
+        public bool Equals(ArtAlimentari cmp)
+        {
+            if (Codice == cmp.Codice && Descrizione == cmp.Descrizione && Prezzo == cmp.Prezzo && Scadenza == cmp.Scadenza)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // Overriding the Equals(Object) method from the Object class
+        public override bool Equals(object obj)
+        {
+            // Comparison of current data with the obj
+            if (obj is ArtAlimentari)
+                return Equals((ArtAlimentari)obj);
+            return false;
+        }
+
+        // Overriding the GetHashCode() method from the Object class
+        public override int GetHashCode()
+        {
+            return Prezzo.GetHashCode() + Descrizione.GetHashCode() + Codice.GetHashCode() + Scadenza.GetHashCode();
+        }
+
+
+
         public override void sconto(bool fedelty)
         {
             base.sconto(fedelty);  

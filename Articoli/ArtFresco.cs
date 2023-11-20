@@ -12,6 +12,26 @@ namespace Articoli
 
         public ArtFresco(int day, int month, int year, string codice, string des, float prezzo) : base(day, month, year, codice, des, prezzo) { }
 
+
+
+        //metodi equals
+
+        // Overriding the Equals(Object) method from the Object class
+        public override bool Equals(object obj)
+        {
+            // Comparison of current data with the obj
+            if (obj is ArtFresco)
+                return Equals((ArtFresco)obj);
+            return false;
+        }
+
+        // Overriding the GetHashCode() method from the Object class
+        public override int GetHashCode()
+        {
+            return Prezzo.GetHashCode() + Descrizione.GetHashCode() + Codice.GetHashCode() + Scadenza.GetHashCode();
+        }
+
+
         public override void sconto(bool fedelty)
         {
             base.sconto(fedelty);
