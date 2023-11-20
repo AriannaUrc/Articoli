@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Art.cs" />
     <Compile Include="ArtAlimentari.cs" />
+    <Compile Include="ArtFresco.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
