@@ -34,7 +34,10 @@ namespace Articoli
 
         public override void sconto(bool fedelty)
         {
-            base.sconto(fedelty);
+            if (fedelty)
+            {
+                Prezzo -= Prezzo / 100 * 5;
+            }
             if(Scadenza.Year == DateTime.Now.Year && Scadenza.Month == DateTime.Now.Month && Scadenza.Day - DateTime.Now.Day <= 5)
             {
                 Prezzo -= Prezzo / 100 * (12 - (Scadenza.Day - DateTime.Now.Day) * 2);
