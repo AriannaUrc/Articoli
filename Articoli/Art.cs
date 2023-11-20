@@ -40,7 +40,7 @@ namespace Articoli
 
 
         //metodi equals e cmp
-        public virtual bool Equals(Art cmp)
+        public bool Equals(Art cmp)
         {
             if(Codice == cmp.Codice && Descrizione == cmp.Descrizione && Prezzo == cmp.Prezzo)
             {
