@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Articoli
 {
-    internal class Art : ICloneable
+    internal class Articolo : ICloneable
     {
         protected string _codice;
         protected string _descrizione;
@@ -18,14 +18,14 @@ namespace Articoli
         public float Prezzo { get { return _prezzo; } set { if (_prezzo >= 0) { _prezzo = value; } else { _prezzo = 0; } } }
 
 
-        public Art() 
+        public Articolo() 
         {
             Codice= "";
             Descrizione = "";
             Prezzo= 0;
         }
 
-        public Art(string codice, string des, float prezzo)
+        public Articolo(string codice, string des, float prezzo)
         {
             Codice = codice;
             Descrizione = des;
@@ -40,7 +40,7 @@ namespace Articoli
 
 
         //metodi equals e cmp
-        public bool Equals(Art cmp)
+        public bool Equals(Articolo cmp)
         {
             if(Codice == cmp.Codice && Descrizione == cmp.Descrizione && Prezzo == cmp.Prezzo)
             {
@@ -53,8 +53,8 @@ namespace Articoli
         public override bool Equals(object obj)
         {
             // Comparison of current data with the obj
-            if (obj is Art)
-                return Equals((Art)obj);
+            if (obj is Articolo)
+                return Equals((Articolo)obj);
             return false;
         }
 
@@ -64,7 +64,10 @@ namespace Articoli
             return Prezzo.GetHashCode() + Descrizione.GetHashCode() + Codice.GetHashCode();
         }
 
-
+        public virtual string to_string()
+        {
+            return Prezzo + " " + Descrizione + " " + Codice;
+        }
 
         public virtual void sconto(bool fedelty)
         {

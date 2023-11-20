@@ -13,7 +13,7 @@ namespace Articoli
         public ArtFresco(int day, int month, int year, string codice, string des, float prezzo) : base(day, month, year, codice, des, prezzo) { }
 
 
-
+        
         //metodi equals
 
         // Overriding the Equals(Object) method from the Object class

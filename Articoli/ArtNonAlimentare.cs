@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Articoli
 {
-    internal class ArtNonAlimentare : Art
+    internal class ArtNonAlimentare : Articolo
     {
         private bool _riciclabile;
         public bool Riciclabile { get { return _riciclabile; } set { _riciclabile = value; } }

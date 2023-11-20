@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Articoli
 {
-    internal class ArtAlimentari : Art
+    internal class ArtAlimentari : Articolo
     {
         protected DateTime _scadenza;
         public DateTime Scadenza { get { return _scadenza; } set { _scadenza = value; } }
