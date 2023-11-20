@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Articoli
 {
-    internal class Art
+    internal class Art : ICloneable
     {
         protected string _codice;
         protected string _descrizione;
@@ -32,13 +32,38 @@ namespace Articoli
             Prezzo = prezzo;
         }
 
-        public bool Equals(Art cmp)
+
+        public object Clone()
         {
-            _codice = cmp._codice;
-
-            return true;
-
+            return this.MemberwiseClone();
         }
+
+
+        //metodi equals e cmp
+        public virtual bool Equals(Art cmp)
+        {
+            if(Codice == cmp.Codice && Descrizione == cmp.Descrizione && Prezzo == cmp.Prezzo)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // Overriding the Equals(Object) method from the Object class
+        public override bool Equals(object obj)
+        {
+            // Comparison of current data with the obj
+            if (obj is Art)
+                return Equals((Art)obj);
+            return false;
+        }
+
+        // Overriding the GetHashCode() method from the Object class
+        public override int GetHashCode()
+        {
+            return Prezzo.GetHashCode() + Descrizione.GetHashCode() + Codice.GetHashCode();
+        }
+
 
 
         public virtual void sconto(bool fedelty)
