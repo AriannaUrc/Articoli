@@ -69,12 +69,13 @@ namespace Articoli
             return Prezzo + " " + Descrizione + " " + Codice;
         }
 
-        public virtual void sconto(bool fedelty)
+        public virtual float sconto(bool fedelty)
         {
             if(fedelty)
             {
-                Prezzo -= Prezzo / 100 * 5;
+                 return Prezzo - ( Prezzo / 100 * 5);
             }
+            return Prezzo;
         }
     }
 }

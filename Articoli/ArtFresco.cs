@@ -32,17 +32,25 @@ namespace Articoli
         }
 
 
-        public override void sconto(bool fedelty)
+        public override float sconto(bool fedelty)
         {
+
+            int sconto = 0;
+
             if (fedelty)
             {
-                Prezzo -= Prezzo / 100 * 5;
+                sconto = 5;
             }
-            if(Scadenza.Year == DateTime.Now.Year && Scadenza.Month == DateTime.Now.Month && Scadenza.Day - DateTime.Now.Day <= 5)
+
+            if (Scadenza.Year == DateTime.Now.Year && Scadenza.Month == DateTime.Now.Month && Scadenza.Day - DateTime.Now.Day <= 5)
             {
-                Prezzo -= Prezzo / 100 * (12 - (Scadenza.Day - DateTime.Now.Day) * 2);
+                return Prezzo - Prezzo / 100 * ((12 - (Scadenza.Day - DateTime.Now.Day) * 2) + sconto);
             }
-            
+
+            if (fedelty) { return Prezzo - Prezzo / 100 * sconto; }
+
+            return Prezzo;
+
         }
     }
 }

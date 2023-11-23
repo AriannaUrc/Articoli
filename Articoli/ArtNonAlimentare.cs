@@ -53,14 +53,30 @@ namespace Articoli
         }
 
 
-
-        public override void sconto(bool fedelty)
+        public override string to_string()
         {
-            base.sconto(fedelty);
-            if(Riciclabile)
+            return Prezzo + " " + Descrizione + " " + Codice + " " + Riciclabile;
+        }
+
+
+        public override float sconto(bool fedelty)
+        {
+
+            int sconto = 0;
+
+            if (fedelty)
             {
-                Prezzo -= Prezzo / 100 * 20;
+                sconto = 5;
             }
+
+            if (Riciclabile)
+            {
+                return Prezzo - Prezzo / 100 * (20 + sconto);
+            }
+
+            if (fedelty) { return Prezzo - Prezzo / 100 * sconto; }
+
+            return Prezzo;
 
         }
 

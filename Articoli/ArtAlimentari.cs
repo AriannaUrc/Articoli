@@ -55,16 +55,28 @@ namespace Articoli
             return Prezzo.GetHashCode() + Descrizione.GetHashCode() + Codice.GetHashCode() + Scadenza.GetHashCode();
         }
 
-
-
-        public override void sconto(bool fedelty)
+        public override string to_string()
         {
-            base.sconto(fedelty);  
+            return Prezzo + " " + Descrizione + " " + Codice + " " + Scadenza;
+        }
 
-            if(Scadenza.Year - DateTime.Now.Year == 0)
+        public override float sconto(bool fedelty)
+        {
+            int sconto = 0;
+
+            if (fedelty)
             {
-                Prezzo -= Prezzo / 100 * 20;
+                sconto = 5;
             }
+
+            if (Scadenza.Year - DateTime.Now.Year == 0)
+            {
+                return Prezzo - (Prezzo / 100 * (20 + sconto));
+            }
+
+            if (fedelty) { return Prezzo - Prezzo / 100 * sconto; }
+
+            return Prezzo;
         }
 
     }
