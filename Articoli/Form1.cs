@@ -20,23 +20,12 @@ namespace Articoli
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string promptValue = Prompt.ShowDialog("Inserisci", "che prodotto vuoi aggiungere? (alimentare, alimentare fresco, non alimentare)");
-
-            switch(promptValue.ToLower())
-            {
-                case "alimentare":
-                    break;
-
-                case "alimentare fresco":
-                    break;
-
-                case "non alimentare":
-                    break;
-            }
+            
         }
+
     }
 
-    public static class Prompt
+    /*public static class Prompt
     {
         public static string ShowDialog(string text, string caption)
         {
@@ -62,5 +51,5 @@ namespace Articoli
             return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
         }
 
-    }
+    }*/
 }
