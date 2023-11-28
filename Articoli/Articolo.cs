@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Articoli
 {
+    
     internal class Articolo : ICloneable
     {
         protected string _codice;
@@ -38,6 +39,13 @@ namespace Articoli
             return this.MemberwiseClone();
         }
 
+
+        public int Compare(Articolo obj)
+        {
+            if(Prezzo < obj.Prezzo) { return -1; }
+            else if(Prezzo > obj.Prezzo) { return 1; }
+            return 0;
+        }
 
         //metodi equals e cmp
         public bool Equals(Articolo cmp)

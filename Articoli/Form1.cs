@@ -12,10 +12,23 @@ namespace Articoli
 {
     public partial class Form1 : Form
     {
+
+        public struct elScontrino
+        {
+            public string nome { get; set; }
+            public float prezzo { get; set; }
+            public float importo { get; set; }
+            public int sconto { get; set; }
+        }
+
+        elScontrino[] scontrino;
+        int numElementi;
+
         public Form1()
         {
             InitializeComponent();
-            
+            scontrino= new elScontrino[10000];
+            numElementi=0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -23,33 +36,14 @@ namespace Articoli
             
         }
 
+        private void add_art_button_Click(object sender, EventArgs e)
+        {
+            Articolo art = new Articolo(codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text));
+            elScontrino tempEl = new elScontrino();
+            numElementi++;
+            //scontrino.Add(tempEl);
+        }
     }
 
-    /*public static class Prompt
-    {
-        public static string ShowDialog(string text, string caption)
-        {
-            Form prompt = new Form()
-            {
-                Width = 410,
-                Height = 150,
-                FormBorderStyle = FormBorderStyle.FixedDialog,
-                Text = caption,
-                StartPosition = FormStartPosition.CenterScreen
-            };
-            Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
-            TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 300 };
-            Button confirmation = new Button() { Text = "Ok", Left = 250, Width = 100, Top = 70, DialogResult = DialogResult.OK };
-            confirmation.Click += (sender, e) => { prompt.Close(); };
-            prompt.Controls.Add(textBox);
-            prompt.Controls.Add(confirmation);
-            prompt.Controls.Add(textLabel);
-            prompt.AcceptButton = confirmation;
-
-
-
-            return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
-        }
-
-    }*/
+    
 }
