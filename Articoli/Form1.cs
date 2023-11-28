@@ -78,7 +78,7 @@ namespace Articoli
 
             for (int i = 0; i < n - 1; i++)
                for (int j = 0; j < n - i - 1; j++)
-                   if (scontrino[j].Prezzo > scontrino[j + 1].Prezzo)
+                   if (scontrino[j].Compare(scontrino[j + 1]) != 1)
                    {
                        var tempVar = scontrino[j];
                        scontrino[j] = scontrino[j + 1];
