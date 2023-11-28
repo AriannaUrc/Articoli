@@ -19,7 +19,7 @@ namespace Articoli
 
         public ArtAlimentari(int day, int month, int year, string codice, string des, float prezzo) : base(codice, des, prezzo)
         {
-            Scadenza = new DateTime(day, month, year);
+            Scadenza = new DateTime(year, month, day);
         }
 
 

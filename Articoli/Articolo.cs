@@ -31,6 +31,7 @@ namespace Articoli
             Codice = codice;
             Descrizione = des;
             Prezzo = prezzo;
+
         }
 
 

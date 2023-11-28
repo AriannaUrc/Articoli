@@ -39,14 +39,15 @@
             this.scadenza_textbox = new System.Windows.Forms.MaskedTextBox();
             this.add_art_button = new System.Windows.Forms.Button();
             this.add_art_alimentare_button = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.add_articoloFresco_button = new System.Windows.Forms.Button();
+            this.art_non_alimentare_button = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pos_textbox = new System.Windows.Forms.TextBox();
-            this.prezzo_button = new System.Windows.Forms.Button();
             this.ordina_button = new System.Windows.Forms.Button();
             this.codice_textbox = new System.Windows.Forms.TextBox();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.fedelity_check = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // prezzo_textbox
@@ -102,7 +103,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(379, 134);
+            this.label4.Location = new System.Drawing.Point(345, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 9;
@@ -111,7 +112,7 @@
             // riciclabile_checkbox
             // 
             this.riciclabile_checkbox.AutoSize = true;
-            this.riciclabile_checkbox.Location = new System.Drawing.Point(398, 156);
+            this.riciclabile_checkbox.Location = new System.Drawing.Point(364, 156);
             this.riciclabile_checkbox.Name = "riciclabile_checkbox";
             this.riciclabile_checkbox.Size = new System.Drawing.Size(15, 14);
             this.riciclabile_checkbox.TabIndex = 10;
@@ -144,24 +145,27 @@
             this.add_art_alimentare_button.TabIndex = 14;
             this.add_art_alimentare_button.Text = "Add artAlimentare";
             this.add_art_alimentare_button.UseVisualStyleBackColor = true;
+            this.add_art_alimentare_button.Click += new System.EventHandler(this.add_art_alimentare_button_Click);
             // 
-            // button3
+            // add_articoloFresco_button
             // 
-            this.button3.Location = new System.Drawing.Point(569, 147);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Add artFresco";
-            this.button3.UseVisualStyleBackColor = true;
+            this.add_articoloFresco_button.Location = new System.Drawing.Point(569, 147);
+            this.add_articoloFresco_button.Name = "add_articoloFresco_button";
+            this.add_articoloFresco_button.Size = new System.Drawing.Size(125, 23);
+            this.add_articoloFresco_button.TabIndex = 15;
+            this.add_articoloFresco_button.Text = "Add artFresco";
+            this.add_articoloFresco_button.UseVisualStyleBackColor = true;
+            this.add_articoloFresco_button.Click += new System.EventHandler(this.add_articoloFresco_button_Click);
             // 
-            // button4
+            // art_non_alimentare_button
             // 
-            this.button4.Location = new System.Drawing.Point(569, 195);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Add artNonAlimentare";
-            this.button4.UseVisualStyleBackColor = true;
+            this.art_non_alimentare_button.Location = new System.Drawing.Point(569, 195);
+            this.art_non_alimentare_button.Name = "art_non_alimentare_button";
+            this.art_non_alimentare_button.Size = new System.Drawing.Size(125, 23);
+            this.art_non_alimentare_button.TabIndex = 16;
+            this.art_non_alimentare_button.Text = "Add artNonAlimentare";
+            this.art_non_alimentare_button.UseVisualStyleBackColor = true;
+            this.art_non_alimentare_button.Click += new System.EventHandler(this.art_non_alimentare_button_Click);
             // 
             // listView1
             // 
@@ -171,40 +175,17 @@
             this.listView1.Size = new System.Drawing.Size(246, 140);
             this.listView1.TabIndex = 17;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(423, 281);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Posizione";
-            // 
-            // pos_textbox
-            // 
-            this.pos_textbox.Location = new System.Drawing.Point(398, 297);
-            this.pos_textbox.Name = "pos_textbox";
-            this.pos_textbox.Size = new System.Drawing.Size(100, 20);
-            this.pos_textbox.TabIndex = 18;
-            // 
-            // prezzo_button
-            // 
-            this.prezzo_button.Location = new System.Drawing.Point(523, 297);
-            this.prezzo_button.Name = "prezzo_button";
-            this.prezzo_button.Size = new System.Drawing.Size(92, 23);
-            this.prezzo_button.TabIndex = 20;
-            this.prezzo_button.Text = "Controlla prezzo";
-            this.prezzo_button.UseVisualStyleBackColor = true;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // ordina_button
             // 
-            this.ordina_button.Location = new System.Drawing.Point(93, 249);
+            this.ordina_button.Location = new System.Drawing.Point(468, 249);
             this.ordina_button.Name = "ordina_button";
             this.ordina_button.Size = new System.Drawing.Size(105, 23);
             this.ordina_button.TabIndex = 21;
             this.ordina_button.Text = "Ordina per prezzo";
             this.ordina_button.UseVisualStyleBackColor = true;
+            this.ordina_button.Click += new System.EventHandler(this.ordina_button_Click);
             // 
             // codice_textbox
             // 
@@ -213,19 +194,57 @@
             this.codice_textbox.Size = new System.Drawing.Size(100, 20);
             this.codice_textbox.TabIndex = 22;
             // 
+            // listView2
+            // 
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(468, 278);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(246, 140);
+            this.listView2.TabIndex = 23;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.List;
+            // 
+            // fedelity_check
+            // 
+            this.fedelity_check.AutoSize = true;
+            this.fedelity_check.Location = new System.Drawing.Point(468, 156);
+            this.fedelity_check.Name = "fedelity_check";
+            this.fedelity_check.Size = new System.Drawing.Size(15, 14);
+            this.fedelity_check.TabIndex = 25;
+            this.fedelity_check.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(449, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Fedelity";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(102, 254);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Scontrino";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.fedelity_check);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.listView2);
             this.Controls.Add(this.codice_textbox);
             this.Controls.Add(this.ordina_button);
-            this.Controls.Add(this.prezzo_button);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pos_textbox);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.art_non_alimentare_button);
+            this.Controls.Add(this.add_articoloFresco_button);
             this.Controls.Add(this.add_art_alimentare_button);
             this.Controls.Add(this.add_art_button);
             this.Controls.Add(this.scadenza_textbox);
@@ -258,14 +277,15 @@
         private System.Windows.Forms.MaskedTextBox scadenza_textbox;
         private System.Windows.Forms.Button add_art_button;
         private System.Windows.Forms.Button add_art_alimentare_button;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button add_articoloFresco_button;
+        private System.Windows.Forms.Button art_non_alimentare_button;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox pos_textbox;
-        private System.Windows.Forms.Button prezzo_button;
         private System.Windows.Forms.Button ordina_button;
         private System.Windows.Forms.TextBox codice_textbox;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.CheckBox fedelity_check;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
 
