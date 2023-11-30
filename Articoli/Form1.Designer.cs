@@ -48,6 +48,8 @@
             this.fedelity_check = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.tot_button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prezzo_textbox
@@ -170,7 +172,7 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(93, 278);
+            this.listView1.Location = new System.Drawing.Point(93, 254);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(246, 140);
             this.listView1.TabIndex = 17;
@@ -225,17 +227,39 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(102, 254);
+            this.label5.Location = new System.Drawing.Point(99, 238);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 26;
             this.label5.Text = "Scontrino";
+            // 
+            // listView3
+            // 
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(194, 409);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(145, 29);
+            this.listView3.TabIndex = 27;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.List;
+            // 
+            // tot_button1
+            // 
+            this.tot_button1.Location = new System.Drawing.Point(345, 409);
+            this.tot_button1.Name = "tot_button1";
+            this.tot_button1.Size = new System.Drawing.Size(80, 23);
+            this.tot_button1.TabIndex = 28;
+            this.tot_button1.Text = "Totale";
+            this.tot_button1.UseVisualStyleBackColor = true;
+            this.tot_button1.Click += new System.EventHandler(this.tot_button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tot_button1);
+            this.Controls.Add(this.listView3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.fedelity_check);
             this.Controls.Add(this.label6);
@@ -286,6 +310,8 @@
         private System.Windows.Forms.CheckBox fedelity_check;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.Button tot_button1;
     }
 }
 
