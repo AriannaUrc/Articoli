@@ -55,7 +55,7 @@ namespace Articoli
             return Prezzo.GetHashCode() + Descrizione.GetHashCode() + Codice.GetHashCode() + Scadenza.GetHashCode();
         }
 
-        public override string to_string()
+        public override string ToString()
         {
             return Prezzo + " " + Descrizione + " " + Codice + " " + Scadenza;
         }

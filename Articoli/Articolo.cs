@@ -40,7 +40,6 @@ namespace Articoli
             return this.MemberwiseClone();
         }
 
-
         public int Compare(Articolo obj)
         {
             if(Prezzo < obj.Prezzo) { return -1; }
@@ -73,7 +72,7 @@ namespace Articoli
             return Prezzo.GetHashCode() + Descrizione.GetHashCode() + Codice.GetHashCode();
         }
 
-        public virtual string to_string()
+        public override string ToString()
         {
             return Prezzo + " " + Descrizione + " " + Codice;
         }
