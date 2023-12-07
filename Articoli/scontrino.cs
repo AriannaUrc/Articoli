@@ -8,7 +8,7 @@ namespace Articoli
 {
     internal class Scontrino
     {
-        Articolo[] articoli;
+        public Articolo[] articoli;
         int dim = 0;
 
         public Scontrino()
