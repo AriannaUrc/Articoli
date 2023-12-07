@@ -102,7 +102,7 @@ namespace Articoli
             }
 
             listView3.Items.Clear();
-            listView3.Items.Add("Totale: " + tot.ToString("0.00"));
+            listView3.Items.Add("Totale: " + tot.ToString("0.00") + "$");
         }
     }
 
