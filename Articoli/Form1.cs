@@ -38,16 +38,16 @@ namespace Articoli
 
         private void add_art_button_Click(object sender, EventArgs e)
         {
-            Articolo art = new Articolo(codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text));
-            scontrino.articoli[numElementi] = new Articolo(art.Codice, art.Descrizione, art.sconto(fedelity_check.Checked));
+            Articolo art = new Articolo(codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text), int.Parse(quantita_textbox.Text));
+            scontrino.articoli[numElementi] = new Articolo(art.Codice, art.Descrizione, art.sconto(fedelity_check.Checked), art.Quantita);
             numElementi++;
             listView1.Items.Add("Nome: " + scontrino.articoli[numElementi-1].Codice + " Prezzo: " + scontrino.articoli[numElementi-1].Prezzo + " Sconto: "+ (100 - scontrino.articoli[numElementi - 1].sconto(fedelity_check.Checked) * 100 / scontrino.articoli[numElementi - 1].Prezzo) + "% Importo: " + scontrino.articoli[numElementi - 1].sconto(fedelity_check.Checked));
         }
 
         private void add_art_alimentare_button_Click(object sender, EventArgs e)
         {
-            ArtAlimentari tmp = new ArtAlimentari(int.Parse(scadenza_textbox.Text.Substring(0, 2)), int.Parse(scadenza_textbox.Text.Substring(3, 2)), int.Parse(scadenza_textbox.Text.Substring(6, 4)), codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text));
-            scontrino.articoli[numElementi] = new Articolo(tmp.Codice, tmp.Descrizione, tmp.sconto(fedelity_check.Checked));
+            ArtAlimentari tmp = new ArtAlimentari(int.Parse(scadenza_textbox.Text.Substring(0, 2)), int.Parse(scadenza_textbox.Text.Substring(3, 2)), int.Parse(scadenza_textbox.Text.Substring(6, 4)), codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text), int.Parse(quantita_textbox.Text));
+            scontrino.articoli[numElementi] = new Articolo(tmp.Codice, tmp.Descrizione, tmp.sconto(fedelity_check.Checked), tmp.Quantita);
             numElementi++;
 
             listView1.Items.Add("Nome: " + scontrino.articoli[numElementi - 1].Codice + " Prezzo: " + scontrino.articoli[numElementi - 1].Prezzo + " Sconto: " + (100 - tmp.sconto(fedelity_check.Checked) * 100 / scontrino.articoli[numElementi - 1].Prezzo) + "% Importo: " + tmp.sconto(fedelity_check.Checked));
@@ -55,8 +55,8 @@ namespace Articoli
 
         private void add_articoloFresco_button_Click(object sender, EventArgs e)
         {
-            ArtFresco tmp = new ArtFresco(int.Parse(scadenza_textbox.Text.Substring(0, 2)), int.Parse(scadenza_textbox.Text.Substring(3, 2)), int.Parse(scadenza_textbox.Text.Substring(6, 4)), codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text));
-            scontrino.articoli[numElementi] = new Articolo(tmp.Codice, tmp.Descrizione, tmp.sconto(fedelity_check.Checked));
+            ArtFresco tmp = new ArtFresco(int.Parse(scadenza_textbox.Text.Substring(0, 2)), int.Parse(scadenza_textbox.Text.Substring(3, 2)), int.Parse(scadenza_textbox.Text.Substring(6, 4)), codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text), int.Parse(quantita_textbox.Text));
+            scontrino.articoli[numElementi] = new Articolo(tmp.Codice, tmp.Descrizione, tmp.sconto(fedelity_check.Checked), tmp.Quantita);
             numElementi++;
 
             listView1.Items.Add("Nome: " + scontrino.articoli[numElementi - 1].Codice + " Prezzo: " + scontrino.articoli[numElementi - 1].Prezzo + " Sconto: " + (100 - tmp.sconto(fedelity_check.Checked) * 100 / scontrino.articoli[numElementi - 1].Prezzo) + "% Importo: " + tmp.sconto(fedelity_check.Checked));
@@ -64,8 +64,8 @@ namespace Articoli
 
         private void art_non_alimentare_button_Click(object sender, EventArgs e)
         {
-            ArtNonAlimentare tmp = new ArtNonAlimentare(riciclabile_checkbox.Checked, codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text));
-            scontrino.articoli[numElementi] = new Articolo(tmp.Codice, tmp.Descrizione, tmp.sconto(fedelity_check.Checked));
+            ArtNonAlimentare tmp = new ArtNonAlimentare(riciclabile_checkbox.Checked, codice_textbox.Text, des_textbox.Text, float.Parse(prezzo_textbox.Text), int.Parse(quantita_textbox.Text));
+            scontrino.articoli[numElementi] = new Articolo(tmp.Codice, tmp.Descrizione, tmp.sconto(fedelity_check.Checked), tmp.Quantita);
             numElementi++;
 
             listView1.Items.Add("Nome: " + scontrino.articoli[numElementi - 1].Codice + " Prezzo: " + scontrino.articoli[numElementi - 1].Prezzo + " Sconto: " + (100 - tmp.sconto(fedelity_check.Checked) * 100 / scontrino.articoli[numElementi - 1].Prezzo) + "% Importo: " + tmp.sconto(fedelity_check.Checked));

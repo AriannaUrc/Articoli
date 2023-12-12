@@ -50,6 +50,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.listView3 = new System.Windows.Forms.ListView();
             this.tot_button1 = new System.Windows.Forms.Button();
+            this.quantita_textbox = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // prezzo_textbox
@@ -253,11 +255,31 @@
             this.tot_button1.UseVisualStyleBackColor = true;
             this.tot_button1.Click += new System.EventHandler(this.tot_button1_Click);
             // 
+            // quantita_textbox
+            // 
+            this.quantita_textbox.Location = new System.Drawing.Point(51, 156);
+            this.quantita_textbox.Mask = "99999";
+            this.quantita_textbox.Name = "quantita_textbox";
+            this.quantita_textbox.Size = new System.Drawing.Size(100, 20);
+            this.quantita_textbox.TabIndex = 29;
+            this.quantita_textbox.ValidatingType = typeof(int);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(71, 134);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Quantità";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.quantita_textbox);
             this.Controls.Add(this.tot_button1);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.label5);
@@ -312,6 +334,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.Button tot_button1;
+        private System.Windows.Forms.MaskedTextBox quantita_textbox;
+        private System.Windows.Forms.Label label7;
     }
 }
 

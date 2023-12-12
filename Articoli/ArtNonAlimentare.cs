@@ -16,7 +16,7 @@ namespace Articoli
             _riciclabile = false;
         }
 
-        public ArtNonAlimentare(bool ric, string codice, string des, float prezzo) : base(codice, des, prezzo)
+        public ArtNonAlimentare(bool ric, string codice, string des, float prezzo, int quantita) : base(codice, des, prezzo, quantita)
         {
             Riciclabile = ric;
         }

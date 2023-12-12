@@ -10,7 +10,7 @@ namespace Articoli
     {
         public ArtFresco() : base() { }
 
-        public ArtFresco(int day, int month, int year, string codice, string des, float prezzo) : base(day, month, year, codice, des, prezzo) { }
+        public ArtFresco(int day, int month, int year, string codice, string des, float prezzo, int quantita) : base(day, month, year, codice, des, prezzo, quantita) { }
 
 
         

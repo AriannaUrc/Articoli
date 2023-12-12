@@ -9,12 +9,15 @@ namespace Articoli
     
     internal class Articolo : ICloneable
     {
-        protected string _codice;
-        protected string _descrizione;
-        protected float _prezzo;
+        private string _codice;
+        private string _descrizione;
+        private float _prezzo;
+        private int _quantita;
+
 
         public string Codice { get { return _codice; } set {_codice = value; } }
         public string Descrizione { get { return _descrizione; } set { _descrizione = value; } }
+        public int Quantita { get { return _quantita; } set { if (value > 0) { _quantita = value; } else { _quantita = 0; } } }
 
         public float Prezzo { get { return _prezzo; } set { if (_prezzo >= 0) { _prezzo = value; } else { _prezzo = 0; } } }
 
@@ -24,13 +27,15 @@ namespace Articoli
             Codice= "";
             Descrizione = "";
             Prezzo= 0;
+            Quantita = 0;
         }
 
-        public Articolo(string codice, string des, float prezzo)
+        public Articolo(string codice, string des, float prezzo, int quantita)
         {
             Codice = codice;
             Descrizione = des;
             Prezzo = prezzo;
+            Quantita= quantita;
 
         }
 
@@ -42,8 +47,8 @@ namespace Articoli
 
         public int Compare(Articolo obj)
         {
-            if(Prezzo < obj.Prezzo) { return -1; }
-            else if(Prezzo > obj.Prezzo) { return 1; }
+            if(Prezzo*Quantita < obj.Prezzo * obj._quantita) { return -1; }
+            else if(Prezzo*Prezzo > obj.Prezzo * obj._quantita) { return 1; }
             return 0;
         }
 

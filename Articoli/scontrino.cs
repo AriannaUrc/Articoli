@@ -90,5 +90,21 @@ namespace Articoli
             }
             return ret;
         }
+
+        public float Calcola(string cod)
+        {
+            float ret = -1;
+
+            for (int i = 0; i < dim; i++)
+            {
+                if (cod == articoli[i].Codice)
+                {
+                    ret = articoli[i].Prezzo*articoli[i].Quantita;
+                    break;
+                }
+            }
+            return ret;
+        }
+
     }
 }
