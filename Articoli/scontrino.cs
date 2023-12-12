@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Articoli.Form1;
 
 namespace Articoli
 {
@@ -13,7 +14,7 @@ namespace Articoli
 
         public Scontrino()
         {
-            articoli= new Articolo[100];
+            articoli = new Articolo[100];
         }
 
         public Scontrino(int dimensione)
@@ -46,9 +47,47 @@ namespace Articoli
 
             for (int i = 0; i < dim; i++)
             {
-                ret+= articoli[i].ToString() + ";";
+                ret += articoli[i].ToString() + ";";
             }
 
+            return ret;
+        }
+
+
+        private void ordina(object sender, EventArgs e)
+        {
+
+            int n = dim;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (articoli[j].Compare(articoli[j + 1]) != 1)
+                    {
+                        var tempVar = articoli[j];
+                        articoli[j] = articoli[j + 1];
+                        articoli[j + 1] = tempVar;
+                    }
+                }
+
+            }
+
+        }
+
+
+        public int Trova(string cod)
+        {
+            int ret = -1;
+
+            for (int i = 0; i < dim; i++)
+            {
+                if(cod == articoli[i].Codice)
+                {
+                    ret = i;
+                    break;
+                }
+            }
             return ret;
         }
     }
